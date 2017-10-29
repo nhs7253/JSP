@@ -9,4 +9,71 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- 프로젝트의 루트경로를 application context에 지정  -->
+  <context-param>
+    <param-name>rootPath</param-name>
+    <param-value>/JSP_Project</param-value>
+  </context-param>
+  
+  
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    	<param-value>
+    	 	classpath:com/study/jsp/config/spring/studySpringOption.xml
+			classpath:com/study/jsp/config/spring/model-context.xml
+		</param-value>
+  </context-param>
+  
+  
+  <!-- 
+	  계층별로 나눈 xml 설정파일이 있다고 가정할 때,
+	web.xml에서 모두 load되도록 등록할 때 사용.
+	서블릿이전에 서블릿 초기화하는 용도록 쓰이며, 
+	contextConfigLocation라는 파라미터를 쓰면, 
+	Context Loader가 load할 수 있는 설정파일을 여거개 쓸 수 있다.
+	
+	web.xml에 저 문장이 빠지게 되면 default로,
+	/WEB-INF/applicationContext.xml (spring 설정파일) 을 쓰게 된다.
+	
+	출처: http://unabated.tistory.com/entry/스프링-ContextLoaderListener-의-역할 [랄라라]
+ -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  
+  
+  <servlet>
+    <servlet-name>JSP_Project</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:com/study/jsp/config/spring/studySpringOption.xml</param-value>
+    </init-param>
+   <!--  <load-on-startup>1</load-on-startup> -->
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>JSP_Project</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- utf-8로 인코딩해주는 필터-->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  
+   <!-- url-pattern에 적힌 경로로 진입시 필터 적용 -->
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
 </web-app>
