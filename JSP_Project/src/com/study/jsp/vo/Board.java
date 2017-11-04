@@ -10,6 +10,7 @@ public class Board implements Serializable{
 	private String text;
 	private int hit;
 	private Date date;
+	
 	public int getNumber() {
 		return number;
 	}
