@@ -22,6 +22,8 @@ public class BoardDaoImplTest {
 		System.out.println("최초 조회");
 		
 		System.out.println(dao.selectBoardAll());
+		
+		System.out.println(dao.selectBoardCount());
 	
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!    이상 없음    !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}

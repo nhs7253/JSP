@@ -26,7 +26,12 @@
  	
  	<select id="selectBoardAll" resultMap="board-resultmap">
 		SELECT <include refid="all-column"/> 
-		FROM board 
+		FROM board
+	</select>
+	
+	<select id="selectBoardCount" resultType="int">
+		SELECT COUNT(*) 
+		FROM board
 	</select>
  	
 </mapper>

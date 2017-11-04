@@ -7,4 +7,6 @@ import com.study.jsp.vo.Board;
 public interface BoardDao {
 	
 	List<Board> selectBoardAll();
+	
+	int selectBoardCount();
 }

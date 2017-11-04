@@ -22,4 +22,9 @@ public class BoardDaoImpl implements BoardDao{
 		return session.selectList(namespace+"selectBoardAll");
 	}
 
+	@Override
+	public int selectBoardCount() {
+		return session.selectOne(namespace+"selectBoardCount");
+	}
+
 }
