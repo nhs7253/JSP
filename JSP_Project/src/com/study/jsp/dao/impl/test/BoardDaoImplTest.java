@@ -29,9 +29,9 @@ public class BoardDaoImplTest {
 	}
 
 	public static void main(String[] args) {
-		BoardDaoImplTest gudit = (BoardDaoImplTest) new ClassPathXmlApplicationContext(
+		BoardDaoImplTest daoTest = (BoardDaoImplTest) new ClassPathXmlApplicationContext(
 				"com/study/jsp/config/spring/model-context.xml").getBean("boardDaoImplTest");
-		gudit.Test();
+		daoTest.Test();
 
 	}
 }

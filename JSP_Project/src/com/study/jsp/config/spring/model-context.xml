@@ -14,7 +14,7 @@
 		
 	 -->
 	 
-	 <context:component-scan base-package="com.study.jsp.dao.impl"/>
+	 <context:component-scan base-package="com.study.jsp.dao.impl, com.study.jsp.service.impl"/>
 	
 	
 	<!-- DB -->
