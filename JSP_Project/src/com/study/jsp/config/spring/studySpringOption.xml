@@ -9,9 +9,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
-			 p:order="1"/>
-	 <!-- p:prefix="/WEB-INF/view/" p:suffix=".jsp" -->
+	
 			
 	<!-- etc -->
 	
@@ -19,4 +17,20 @@
 	
 	<mvc:annotation-driven/>
 	<!-- http://hamait.tistory.com/322 -->
+	
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+			 p:prefix="/WEB-INF/view/"
+			 p:suffix=".jsp"
+			 p:order="1"/>
+			 
+			 <!-- 
+			 	 p:prefix="/WEB-INF/view/" p:suffix=".jsp"
+			  -->
+			 
+	<mvc:view-controller path="index.do" view-name="board/index"/>
+	
+	
+	
+	 
 </beans>
