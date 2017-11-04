@@ -1,5 +1,10 @@
 package com.study.jsp.dao;
 
-public class BoardDao {
+import java.util.List;
 
+import com.study.jsp.vo.Board;
+
+public interface BoardDao {
+	
+	List<Board> selectBoardAll();
 }
