@@ -5,6 +5,7 @@ import java.sql.Date;
 
 public class Board implements Serializable{
 	
+
 	private int boardNumber;
 	private String boardTitle;
 	private String boardText;
