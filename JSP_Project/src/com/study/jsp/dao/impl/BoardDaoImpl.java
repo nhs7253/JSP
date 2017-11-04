@@ -27,4 +27,17 @@ public class BoardDaoImpl implements BoardDao{
 		return session.selectOne(namespace+"selectBoardCount");
 	}
 
+	@Override
+	public Board selectBoardByNumber(int number) {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+"selectBoardByNumber", number);
+	}
+
+	@Override
+	public int intsertBoard(Board board) {
+		return session.insert(namespace+"insertBoard", board);
+	}
+
+
+
 }

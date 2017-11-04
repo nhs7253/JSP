@@ -30,7 +30,5 @@
 			 
 	<mvc:view-controller path="index.do" view-name="board/index"/>
 	
-	
-	
 	 
 </beans>

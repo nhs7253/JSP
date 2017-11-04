@@ -14,6 +14,11 @@ public class Board implements Serializable{
 	
 	public Board() {
 	}
+	
+	public Board(String boardTitle, String boardText) {
+		this.boardTitle = boardTitle;
+		this.boardText = boardText;
+	}
 
 	public Board(int boardNumber, String boardTitle, String boardText, int boardHit, Date boardDate) {
 		this.boardNumber = boardNumber;

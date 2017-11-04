@@ -33,5 +33,24 @@
 		SELECT COUNT(*) 
 		FROM board
 	</select>
+	
+	<select id="selectBoardByNumber" resultMap="board-resultmap" parameterType="int">
+		SELECT <include refid="all-column"/> 
+		FROM board
+		WHERE board_number = #{value}
+	</select>
+	
+	<insert id="insertBoard" parameterType="board"><!-- com.study.jsp.vo.Board 설정없이 원경로 -->
+		
+		<selectKey keyProperty="boardNumber" resultType="_int" order="BEFORE">
+			SELECT board_seq.nextval FROM dual
+		</selectKey>
+		INSERT INTO board VALUES(
+								#{boardNumber},
+								#{boardTitle},
+								#{boardText},
+								0,
+								SYSDATE)
+	</insert>
  	
 </mapper>

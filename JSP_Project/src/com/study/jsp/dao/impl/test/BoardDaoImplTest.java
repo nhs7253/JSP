@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.study.jsp.dao.BoardDao;
+import com.study.jsp.vo.Board;
 
 @Component
 public class BoardDaoImplTest {
@@ -24,6 +25,12 @@ public class BoardDaoImplTest {
 		System.out.println(dao.selectBoardAll());
 		
 		System.out.println(dao.selectBoardCount());
+		
+		System.out.println(dao.selectBoardByNumber(1));
+		
+		System.out.println(dao.intsertBoard(new Board("제목7", "내용7")));
+		
+		System.out.println(dao.selectBoardByNumber(7));
 	
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!    이상 없음    !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}

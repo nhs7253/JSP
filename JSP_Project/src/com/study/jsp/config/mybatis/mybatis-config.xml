@@ -7,7 +7,7 @@
 	</settings>
 	
 	<typeAliases>
-		<package name="com.cnb.vo"/>
+		<package name="com.study.jsp.vo"/>
 	</typeAliases>
 	
 	<mappers>

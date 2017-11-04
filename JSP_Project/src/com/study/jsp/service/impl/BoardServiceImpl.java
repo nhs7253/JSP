@@ -24,9 +24,24 @@ public class BoardServiceImpl implements BoardService{
 		return num;
 		
 		return 1 + 1;
-		*/
+	*/
 		
 		return boardDao.selectBoardAll();
+	}
+	
+	@Override
+	public Board getBoardListByNum(int selectNum) {
+		// TODO Auto-generated method stub
+	
+		
+		return boardDao.selectBoardByNumber(selectNum);
+	}
+
+	@Override
+	public void insertBoardData(Board insertdata) { /// ()파라메터는 서비스 인터페이스에서 설정한 변수 이름으로 설정
+		// TODO Auto-generated method stub
+		
+		boardDao.intsertBoard(insertdata); // 컨트롤러 에서 넘어오는 파라메터를 Dao로 담아줌
 	}
 	
 	

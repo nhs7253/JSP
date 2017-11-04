@@ -17,6 +17,8 @@ public class BoardServiceImplTest {
 		
 		System.out.println(service.getBoardList());
 		
+		System.out.println(service.getBoardListByNum(0));
+		
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!    이상 없음    !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
 	
