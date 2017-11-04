@@ -19,7 +19,7 @@
 	
 	<bean name="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>
+		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl"/>
 		<property name="username" value="studyfirst"/>
 		<property name="password" value="1111"/>
 		<property name="maxTotal" value="50"/>
@@ -27,7 +27,7 @@
 	
 	<bean name="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="configLocation" value="classpath:com/cnb/config/mybatis/mybatis-config.xml"/>
+		<property name="configLocation" value="classpath:com/study/jsp/config/mybatis/mybatis-config.xml"/>
 	</bean>
 	
 	<bean name="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
