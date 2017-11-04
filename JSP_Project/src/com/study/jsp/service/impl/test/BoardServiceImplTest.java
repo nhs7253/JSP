@@ -15,7 +15,7 @@ public class BoardServiceImplTest {
 	public void Test(){
 		System.out.println("서비스 테스트 시작");
 		
-		
+		System.out.println(service.getBoardList());
 		
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!    이상 없음    !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
