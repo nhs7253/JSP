@@ -40,7 +40,7 @@
 		WHERE board_number = #{value}
 	</select>
 	
-	<insert id="insertBoard" parameterType="board"><!-- com.study.jsp.vo.Board 설정없이 원경로 -->
+	<insert id="insertBoard" parameterType="board"><!-- com.study.jsp.vo.Board 설정 없이 원경로 -->
 		
 		<selectKey keyProperty="boardNumber" resultType="_int" order="BEFORE">
 			SELECT board_seq.nextval FROM dual
@@ -52,5 +52,18 @@
 								0,
 								SYSDATE)
 	</insert>
+	
+	<update id="updateBoard" parameterType="board"> <!-- "board" config에서 소문자로 VO경로해도 허용한다고 설정, 매개변수는 board객체로 여러값 사용자 입력값을 가져옴 -->
+		UPDATE board
+		SET board_title = #{boardTitle},
+			board_text = #{boardTitle}
+		WHERE board_number = #{boardNumber}
+	</update>
+	
+	
+	<delete id="deletBoard" parameterType= "int">
+		DELETE FROM board 
+		WHERE board_number = #{boardNumber}
+	</delete>
  	
 </mapper>

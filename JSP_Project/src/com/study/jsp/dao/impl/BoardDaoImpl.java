@@ -38,6 +38,20 @@ public class BoardDaoImpl implements BoardDao{
 		return session.insert(namespace+"insertBoard", board);
 	}
 
+	@Override
+	public int updateBoard(Board board) {
+		// TODO Auto-generated method stub
+		return session.update(namespace+"updateBoard",board);
+	}
+
+	@Override
+	public int deletBoard(int keyNumber) {
+		// TODO Auto-generated method stub
+		return session.delete(namespace+"deletBoard", keyNumber);//mapper에 등록 한 아이디값과 경로(statement),받을값(파라메터지정-인터페이스 키값)
+	}
+
+	
+
 
 
 }

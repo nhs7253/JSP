@@ -43,6 +43,21 @@ public class BoardServiceImpl implements BoardService{
 		
 		boardDao.intsertBoard(insertdata); // 컨트롤러 에서 넘어오는 파라메터를 Dao로 담아줌
 	}
+
+	@Override
+	public void updateBoardData(Board updateData) {
+		// TODO Auto-generated method stub
+		
+		boardDao.updateBoard(updateData);
+		
+	}
+
+	@Override
+	public void deleteBoardDate(int keyNumber) {
+		
+		boardDao.deletBoard(keyNumber);
+		
+	}
 	
 	
 	

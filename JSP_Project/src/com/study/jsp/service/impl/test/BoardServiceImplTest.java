@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.study.jsp.service.BoardService;
+import com.study.jsp.vo.Board;
 
 @Component
 public class BoardServiceImplTest {
@@ -18,6 +19,15 @@ public class BoardServiceImplTest {
 		System.out.println(service.getBoardList());
 		
 		System.out.println(service.getBoardListByNum(0));
+		
+		
+		
+		
+		service.updateBoardData(new Board(7, "업데이트테스트", "앙기모찌"));
+		System.out.println(service.getBoardListByNum(7));
+		
+		service.deleteBoardDate(1);// 실제 delete시키고 싶은 키값 int형 
+		
 		
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!    이상 없음    !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}

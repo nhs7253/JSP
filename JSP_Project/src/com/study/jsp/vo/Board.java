@@ -20,6 +20,12 @@ public class Board implements Serializable{
 		this.boardText = boardText;
 	}
 
+	public Board(int boardNumber, String boardTitle, String boardText) {
+		this.boardNumber = boardNumber;
+		this.boardTitle = boardTitle;
+		this.boardText = boardText;
+	}
+
 	public Board(int boardNumber, String boardTitle, String boardText, int boardHit, Date boardDate) {
 		this.boardNumber = boardNumber;
 		this.boardTitle = boardTitle;

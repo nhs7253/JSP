@@ -30,7 +30,7 @@ public class BoardController {
 	@RequestMapping("/displaySelectNum")
 	public ModelAndView displaySelectNum(@RequestParam(value="displayNum", required=false) int displayNum){
 		
-		ModelAndView displayNumber = new ModelAndView();
+		ModelAndView displayNumber = new ModelAndView();// modelAndView 사용을 위해 view단에 보낼 값을 담아 두는 역할
 		
 		displayNumber.addObject("displayNumber", boardService.getBoardListByNum(displayNum));
 		displayNumber.setViewName("board/userView");
@@ -45,4 +45,21 @@ public class BoardController {
 		
 		return "redirect:/displayBoard.do";
 	}
+	
+	@RequestMapping("/updateBoardData") 
+	public String updateBoardData(@ModelAttribute Board board)
+	{
+		boardService.updateBoardData(board);
+		return "redirect:/displayBoard.do";
+		
+	}
+	@RequestMapping("/deleteBoardDate") 
+	public String deleteBoardDate(@RequestParam(value="keyNumber", required=false) int keyNumber){//value="" JSP에서 맞춰 줘야함[name=""] 
+	//또한 받는 파라메터 값으로 맞춰야함 ==> (int keyNumber)	
+		
+		boardService.deleteBoardDate(keyNumber);
+		return "redirect:/displayBoard.do";
+	}
+	
+	
 }

@@ -31,6 +31,12 @@ public class BoardDaoImplTest {
 		System.out.println(dao.intsertBoard(new Board("제목7", "내용7")));
 		
 		System.out.println(dao.selectBoardByNumber(7));
+		
+		System.out.println(dao.updateBoard(new Board("제목", "내용")));
+		
+		System.out.println("update 진입 완료");
+		
+		System.out.println(dao.deletBoard(1));
 	
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!    이상 없음    !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
